@@ -10,31 +10,32 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: Arial, sans-serif;
+  background: #f9f9f9;
 }
 
 /* NAVBAR */
 nav {
   position: fixed;
-  top: 0;
   width: 100%;
-  background: rgba(255,255,255,0.95);
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 15px 25px;
   z-index: 1000;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.05);
 }
 
 nav a {
   margin-left: 15px;
   text-decoration: none;
   color: #333;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 /* HERO */
@@ -46,33 +47,40 @@ nav a {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 20px;
   color: white;
+  padding: 20px;
 }
 
 .hero h1 {
-  font-size: 26px;
+  font-size: 30px;
+  animation: fadeUp 1s ease;
 }
 
 .hero p {
   margin-top: 10px;
-  font-size: 14px;
+  opacity: 0.9;
+  animation: fadeUp 1.3s ease;
 }
 
 .btn {
   display: inline-block;
   margin-top: 20px;
-  background: #25D366;
+  padding: 12px 30px;
+  border-radius: 30px;
+  background: linear-gradient(45deg,#25D366,#1ebe5d);
   color: white;
-  padding: 12px 25px;
-  border-radius: 25px;
   text-decoration: none;
   font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
 }
 
 /* SECTION */
 section {
-  padding: 60px 20px;
+  padding: 70px 20px;
   text-align: center;
 }
 
@@ -85,32 +93,37 @@ section {
 
 .card {
   width: 100%;
-  max-width: 300px;
-  background: #f5f5f5;
+  max-width: 280px;
+  padding: 20px;
   margin: 10px;
-  padding: 15px;
-  border-radius: 10px;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 /* TESTI */
 .testi {
-  background: #ffe4ec;
-  padding: 15px;
-  margin: 10px auto;
   max-width: 300px;
+  margin: 10px auto;
+  padding: 15px;
   border-radius: 10px;
+  background: #ffe4ec;
 }
 
 /* KONTAK */
 .kontak p {
-  margin: 5px 0;
+  margin: 5px;
 }
 
 /* FOOTER */
 footer {
-  background: #222;
+  background: #111;
   color: white;
-  text-align: center;
   padding: 20px;
 }
 
@@ -120,17 +133,39 @@ footer {
   bottom: 20px;
   right: 20px;
   background: #25D366;
-  color: white;
   padding: 15px;
   border-radius: 50%;
+  color: white;
   text-decoration: none;
-  font-size: 20px;
+}
+
+/* ANIMASI */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.6s;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* DESKTOP */
-@media(min-width: 768px) {
+@media(min-width:768px){
   .hero h1 {
-    font-size: 40px;
+    font-size: 45px;
   }
 
   .grid {
@@ -157,30 +192,30 @@ footer {
 <div class="hero" id="home">
   <div>
     <h1>✨ Klinik Kecantikan Modern ✨</h1>
-    <p>Kulit sehat & glowing</p>
-    <a href="https://wa.me/6281234567890" class="btn">Chat WhatsApp</a>
+    <p>Kulit sehat & glowing setiap hari</p>
+    <a href="https://wa.me/6281234567890" class="btn">Konsultasi Gratis</a>
   </div>
 </div>
 
 <!-- LAYANAN -->
-<section id="layanan">
+<section id="layanan" class="fade">
   <h2>Layanan Kami</h2>
   <div class="grid">
-    <div class="card">Facial Treatment</div>
-    <div class="card">Botox & Filler</div>
-    <div class="card">Perawatan Jerawat</div>
+    <div class="card">✨ Facial Treatment</div>
+    <div class="card">💉 Botox & Filler</div>
+    <div class="card">🌿 Perawatan Jerawat</div>
   </div>
 </section>
 
 <!-- TESTIMONI -->
-<section>
+<section class="fade">
   <h2>Testimoni</h2>
   <div class="testi">"Pelayanan sangat memuaskan!" - Siti</div>
   <div class="testi">"Kulit jadi glowing!" - Rina</div>
 </section>
 
 <!-- KONTAK -->
-<section id="kontak" class="kontak">
+<section id="kontak" class="kontak fade">
   <h2>Kontak</h2>
   <p>📍 Jl. Contoh No.123</p>
   <p>📞 08123456789</p>
@@ -192,8 +227,23 @@ footer {
   <p>© 2026 Glow Beauty Clinic</p>
 </footer>
 
-<!-- FLOAT WA -->
+<!-- WA FLOAT -->
 <a href="https://wa.me/6281234567890" class="wa">💬</a>
+
+<script>
+const elements = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+  elements.forEach(el => {
+    const pos = el.getBoundingClientRect().top;
+    const screen = window.innerHeight;
+
+    if(pos < screen - 100){
+      el.classList.add('show');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
