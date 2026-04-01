@@ -6,106 +6,136 @@
 <title>Glow Beauty Clinic</title>
 
 <style>
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: Arial, sans-serif;
 }
 
 /* NAVBAR */
 nav {
   position: fixed;
+  top: 0;
   width: 100%;
-  background: white;
+  background: rgba(255,255,255,0.95);
   display: flex;
   justify-content: space-between;
-  padding: 15px;
+  align-items: center;
+  padding: 15px 20px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
 }
 
 nav a {
-  margin-left: 10px;
+  margin-left: 15px;
   text-decoration: none;
-  color: black;
+  color: #333;
+  font-weight: bold;
 }
 
 /* HERO */
 .hero {
-  margin-top: 70px;
-  height: 80vh;
-  background: url('klinik.jpeg') center/cover;
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('klinik.jpeg') center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 20px;
   color: white;
 }
 
 .hero h1 {
-  font-size: 28px;
+  font-size: 26px;
+}
+
+.hero p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  background: #25D366;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 /* SECTION */
 section {
-  padding: 40px 20px;
+  padding: 60px 20px;
   text-align: center;
 }
 
 /* GRID */
 .grid {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card {
-  background: #f9f9f9;
+  width: 100%;
+  max-width: 300px;
+  background: #f5f5f5;
   margin: 10px;
   padding: 15px;
-  width: 90%;
-  max-width: 250px;
   border-radius: 10px;
-}
-
-/* BUTTON */
-.btn {
-  background: #25D366;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 20px;
 }
 
 /* TESTI */
 .testi {
   background: #ffe4ec;
-  margin: 10px auto;
   padding: 15px;
+  margin: 10px auto;
+  max-width: 300px;
   border-radius: 10px;
+}
+
+/* KONTAK */
+.kontak p {
+  margin: 5px 0;
 }
 
 /* FOOTER */
 footer {
   background: #222;
   color: white;
+  text-align: center;
   padding: 20px;
 }
 
-/* WA FLOAT */
+/* FLOAT WA */
 .wa {
   position: fixed;
-  bottom: 15px;
-  right: 15px;
+  bottom: 20px;
+  right: 20px;
   background: #25D366;
   color: white;
-  padding: 12px;
+  padding: 15px;
   border-radius: 50%;
   text-decoration: none;
+  font-size: 20px;
 }
 
-/* RESPONSIVE */
-@media (min-width: 768px) {
+/* DESKTOP */
+@media(min-width: 768px) {
   .hero h1 {
     font-size: 40px;
+  }
+
+  .grid {
+    flex-direction: row;
+    justify-content: center;
   }
 }
 </style>
@@ -128,7 +158,6 @@ footer {
   <div>
     <h1>✨ Klinik Kecantikan Modern ✨</h1>
     <p>Kulit sehat & glowing</p>
-    <br>
     <a href="https://wa.me/6281234567890" class="btn">Chat WhatsApp</a>
   </div>
 </div>
@@ -137,31 +166,33 @@ footer {
 <section id="layanan">
   <h2>Layanan Kami</h2>
   <div class="grid">
-    <div class="card">Facial</div>
-    <div class="card">Botox</div>
-    <div class="card">Jerawat</div>
+    <div class="card">Facial Treatment</div>
+    <div class="card">Botox & Filler</div>
+    <div class="card">Perawatan Jerawat</div>
   </div>
 </section>
 
-<!-- TESTI -->
+<!-- TESTIMONI -->
 <section>
   <h2>Testimoni</h2>
-  <div class="testi">"Sangat bagus!"</div>
-  <div class="testi">"Kulit jadi glowing!"</div>
+  <div class="testi">"Pelayanan sangat memuaskan!" - Siti</div>
+  <div class="testi">"Kulit jadi glowing!" - Rina</div>
 </section>
 
 <!-- KONTAK -->
-<section id="kontak">
+<section id="kontak" class="kontak">
   <h2>Kontak</h2>
-  <p>📍 Jl. Contoh</p>
+  <p>📍 Jl. Contoh No.123</p>
   <p>📞 08123456789</p>
+  <p>📧 klinik@email.com</p>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 Glow Clinic</p>
+  <p>© 2026 Glow Beauty Clinic</p>
 </footer>
 
+<!-- FLOAT WA -->
 <a href="https://wa.me/6281234567890" class="wa">💬</a>
 
 </body>
