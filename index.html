@@ -1,249 +1,161 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Glow Beauty Clinic</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Developer - Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      color: #333;
+    }
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-  scroll-behavior: smooth;
-}
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: auto;
+    }
 
-body {
-  background: #f9f9f9;
-}
+    header {
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
 
-/* NAVBAR */
-nav {
-  position: fixed;
-  width: 100%;
-  background: rgba(255,255,255,0.9);
-  backdrop-filter: blur(10px);
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 25px;
-  z-index: 1000;
-  box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-}
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
 
-nav a {
-  margin-left: 15px;
-  text-decoration: none;
-  color: #333;
-  font-weight: 600;
-}
+    header p {
+      margin: 10px 0;
+      font-size: 18px;
+    }
 
-/* HERO */
-.hero {
-  height: 100vh;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-              url('klinik.jpeg') center/cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  padding: 20px;
-}
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: white;
+      color: #333;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-.hero h1 {
-  font-size: 30px;
-  animation: fadeUp 1s ease;
-}
+    section {
+      padding: 50px 0;
+    }
 
-.hero p {
-  margin-top: 10px;
-  opacity: 0.9;
-  animation: fadeUp 1.3s ease;
-}
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 30px;
-  border-radius: 30px;
-  background: linear-gradient(45deg,#25D366,#1ebe5d);
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
+    .about, .skills {
+      text-align: center;
+      max-width: 700px;
+      margin: auto;
+    }
 
-.btn:hover {
-  transform: scale(1.05);
-}
+    .skills span {
+      display: inline-block;
+      background: #e3e3e3;
+      padding: 8px 12px;
+      margin: 5px;
+      border-radius: 6px;
+    }
 
-/* SECTION */
-section {
-  padding: 70px 20px;
-  text-align: center;
-}
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
 
-/* GRID */
-.grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+    .card {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
 
-.card {
-  width: 100%;
-  max-width: 280px;
-  padding: 20px;
-  margin: 10px;
-  border-radius: 15px;
-  background: white;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-  transition: 0.3s;
-}
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+    }
 
-.card:hover {
-  transform: translateY(-5px);
-}
-
-/* TESTI */
-.testi {
-  max-width: 300px;
-  margin: 10px auto;
-  padding: 15px;
-  border-radius: 10px;
-  background: #ffe4ec;
-}
-
-/* KONTAK */
-.kontak p {
-  margin: 5px;
-}
-
-/* FOOTER */
-footer {
-  background: #111;
-  color: white;
-  padding: 20px;
-}
-
-/* FLOAT WA */
-.wa {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  padding: 15px;
-  border-radius: 50%;
-  color: white;
-  text-decoration: none;
-}
-
-/* ANIMASI */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: 0.6s;
-}
-
-.fade.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* DESKTOP */
-@media(min-width:768px){
-  .hero h1 {
-    font-size: 45px;
-  }
-
-  .grid {
-    flex-direction: row;
-    justify-content: center;
-  }
-}
-</style>
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #222;
+      color: white;
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- NAVBAR -->
-<nav>
-  <b>Glow Clinic</b>
-  <div>
-    <a href="#home">Home</a>
-    <a href="#layanan">Layanan</a>
-    <a href="#kontak">Kontak</a>
+<header>
+  <div class="container">
+    <h1>Halo, Saya [NAMA KAMU]</h1>
+    <p>Web Developer - Spesialis Website Klinik & Bisnis</p>
+    <a href="https://wa.me/628XXXXXXXXXX" class="btn">Chat WhatsApp</a>
   </div>
-</nav>
+</header>
 
-<!-- HERO -->
-<div class="hero" id="home">
-  <div>
-    <h1>✨ Glow Beauty Clinic ✨</h1>
-    <p>Kulit sehat & glowing setiap hari</p>
-    <a href="https://wa.me/6281234567890" class="btn">Konsultasi Gratis</a>
-  </div>
-</div>
-
-<!-- LAYANAN -->
-<section id="layanan" class="fade">
-  <h2>Layanan Kami</h2>
-  <div class="grid">
-    <div class="card">✨ Facial Treatment</div>
-    <div class="card">💉 Botox & Filler</div>
-    <div class="card">🌿 Perawatan Jerawat</div>
+<section>
+  <div class="container about">
+    <h2>Tentang Saya</h2>
+    <p>Saya adalah web developer yang membantu bisnis & klinik memiliki website profesional agar lebih dipercaya dan mudah ditemukan di Google.</p>
   </div>
 </section>
 
-<!-- TESTIMONI -->
-<section class="fade">
-  <h2>Testimoni</h2>
-  <div class="testi">"Pelayanan sangat memuaskan!" - Siti</div>
-  <div class="testi">"Kulit jadi glowing!" - Rina</div>
+<section>
+  <div class="container skills">
+    <h2>Skill Saya</h2>
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript</span>
+    <span>Landing Page</span>
+    <span>Website Klinik</span>
+  </div>
 </section>
 
-<!-- KONTAK -->
-<section id="kontak" class="kontak fade">
-  <h2>Kontak</h2>
-  <p>📍 Jl. Contoh No.123</p>
-  <p>📞 08123456789</p>
-  <p>📧 klinik@email.com</p>
+<section>
+  <div class="container">
+    <h2>Portofolio</h2>
+    <div class="portfolio">
+      
+      <div class="card">
+        <img src="https://via.placeholder.com/300x200">
+        <h3>Website Klinik</h3>
+        <p>Landing page klinik modern & profesional</p>
+      </div>
+
+      <div class="card">
+        <img src="https://via.placeholder.com/300x200">
+        <h3>Website Bisnis</h3>
+        <p>Website untuk UMKM & perusahaan</p>
+      </div>
+
+    </div>
+  </div>
 </section>
 
-<!-- FOOTER -->
+<section>
+  <div class="container" style="text-align:center;">
+    <h2>Mau Website Juga?</h2>
+    <p>Saya bisa buatkan demo gratis untuk bisnis kamu</p>
+    <a href="https://wa.me/628XXXXXXXXXX" class="btn">Hubungi Sekarang</a>
+  </div>
+</section>
+
 <footer>
-  <p>© 2026 Glow Beauty Clinic</p>
+  <p>© 2026 Web Developer</p>
 </footer>
-
-<!-- WA FLOAT -->
-<a href="https://wa.me/6281234567890" class="wa">💬</a>
-
-<script>
-const elements = document.querySelectorAll('.fade');
-
-window.addEventListener('scroll', () => {
-  elements.forEach(el => {
-    const pos = el.getBoundingClientRect().top;
-    const screen = window.innerHeight;
-
-    if(pos < screen - 100){
-      el.classList.add('show');
-    }
-  });
-});
-</script>
 
 </body>
 </html>
